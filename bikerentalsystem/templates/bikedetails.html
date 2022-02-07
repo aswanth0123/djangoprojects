@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>Title</title>
+</head>
+<body style="background-color:gray">
+    <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <h1 style="color:green"></h1>
+    </div>
+
+<ul class="nav navbar-nav">
+    <li class="active"><a href="bike">Bike</a></li>
+      <li class="active"><a href="adboard">Admin Dashboard</a></li>
+    </ul>
+  </div>
+    </nav>
+      <div class="container">
+<h1 style="text-align:center">Bike Details</h1>
+          <table class="table table-bordered table-dark" >
+              <thead>
+              <tr>
+                  <th scope="col">Bike Image</th>
+                  <th scope="col">Bike Number</th>
+                  <th scope="col">Bike Name</th>
+                  <th scope="col">Bike Company</th>
+                  <th scope="col">Bike Charge</th>
+                  <th scope="col">Bike Discription</th>
+                  <th scope="col">Year Of Old</th>
+                  <th scope="col">Edit/Delete</th>
+              </tr>
+              </thead>
+              {% for i in r %}
+              <tbody>
+              <tr>
+                  <td>
+                      <img src="{{i.bimage.url}}" height="80" width="80"><br><br>
+                  </td>
+                  <td>
+                      {{i.bnumber}}<br>
+                  </td>
+                  <td>
+                      {{i.bname}}<br>
+                  </td>
+                  <td>
+                      {{i.bcompany}}<br>
+                  </td>
+                  <td>{{i.charge}}<br>
+                  </td>
+                  <td>
+                      {{i.bdiscription}}<br>
+                  </td>
+                  <td>
+                      {{i.bold}}<br>
+                  </td>
+                  <td>
+                      <form action="edit" method="post">
+                          {% csrf_token %}
+                      <button class="btn btn-primary btn-block" type="submit" style="color:black;">Edit</button>
+                      </form>
+                      <form action="delete" method="post">
+                          {% csrf_token %}
+                          <input type="submit" class="btn btn-block" value="Delete">
+                      </form>
+                  </td>
+              </tr>
+              </tbody>
+          <br>
+          <br>
+          <br>
+          <br>
+          {% endfor %}
+          </table>
+  </div>
+
+</body>
+</html>

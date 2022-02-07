@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>Title</title>
+</head>
+<body style="background-image:url('{% static "bike4.jpg" %}')">
+<form action="home" method="post">
+    <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="h">Home</a></li>
+      <li class="active"><a href="cbike">Bike</a></li>
+      <li class="active"><a href="contact">Contact</a></li>
+      <li class="active"><a href="help">Help</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="reg"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+      <li><a href="log"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container" >
+<h1 style="color:green;font-family:brush script mt;text-align:center;font-size:40px;">BIKE RENTAL SYSTEM</h1>
+  <p style="color:black;font-size:20px;">Which is the premier bike rental and sharing service that provides a platform to connect bike with active people looking to rent around the world.
+    Through our service, we listed our bikes, renters search for a bike in whatever area they want, and complete the rental process easily through our website.
+    We even offer various protection options and delivery services to make everyone happy.                                                                                      </p>
+</div>
+
+</form>
+
+</body>
+</html>
