@@ -88,6 +88,7 @@ def addingbike(request):
     g = request.POST['bold']
     data = bikedetails(bimage=a,bnumber=b,bname=c,bcompany=d,charge=e,bdiscription=f,bold=g)
     data.save()
+    print(data)
     return render(request,'admindashboard.html')
 def edit(request):
 
